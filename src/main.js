@@ -10,6 +10,9 @@ Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
 
+Vue.filter("guolv",function(item){
+  return item.replace(/{size}/,"400")
+})
 new Vue({
   router,
   store,

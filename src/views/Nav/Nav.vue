@@ -1,7 +1,8 @@
 <template>
   <div>
+    
     <!-- <router-link to="/rank" v-for="(item) in nav" :key="item.name">{{item.name}}</router-link> -->
-    <mt-navbar v-model="selected">
+    <mt-navbar v-model="selected" id="Nav">
       <mt-tab-item
         v-for="(item) in nav"
         :id="item.name"
@@ -24,12 +25,14 @@ export default {
   data() {
     return {
       nav,
-      selected: "rank"
+      selected: this.$route.name
     };
   },
   methods: {
     fn(item) {
       this.$router.push({ name: item.name });
+     this.selected = item.name
+          
     }
   }
 };
